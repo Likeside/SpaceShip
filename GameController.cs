@@ -14,10 +14,16 @@ namespace SpaceShip
         private IEnemyFactory _enemyFactory;
         private InteractiveObject[] _interactiveObjects;
         private ListOfExecutables _listOfExecutables;
+        private InputController _inputController;
         
         private void Start()
         {
+            _inputController = new InputController(FindObjectOfType<Player>());
+            
+            
             _enemyFactory = new EnemyAsteroidsFactory(_listOfEnemyScriptableObjects);
+            
+            //Цикл временно тут, спавнит астероиды для проверки работы
             for (int i = 0; i <= _enemyCount; i++)
             {
                 _enemyFactory.GetEnemy();
@@ -26,6 +32,7 @@ namespace SpaceShip
             _interactiveObjects = FindObjectsOfType<InteractiveObject>();
 
             _listOfExecutables = new ListOfExecutables();
+            _listOfExecutables.AddExecutableObject(_inputController);
         }
 
         private void Update()
