@@ -35,7 +35,7 @@ namespace InteractiveObjects.Enemies
         }
 
 
-        public int ApplyDamageOnCollision()
+        public int ApplyDamageOnCollision(int damage)
         {
             return _enemyData._collisionDamage;
         }
@@ -57,7 +57,7 @@ namespace InteractiveObjects.Enemies
 
         public override void Interaction()
         {
-            ApplyDamageOnCollision();
+            ApplyDamageOnCollision(_enemyData._collisionDamage);
             _enemyData._healthPoints = 0;
             Destroy();
         }

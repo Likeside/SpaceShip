@@ -2,6 +2,6 @@ namespace Interfaces
 {
     public interface ICollisionDamage
     {
-        int ApplyDamageOnCollision();
+        int ApplyDamageOnCollision(int damage);
     }
 }

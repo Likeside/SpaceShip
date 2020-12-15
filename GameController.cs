@@ -15,9 +15,11 @@ namespace SpaceShip
         private InteractiveObject[] _interactiveObjects;
         private ListOfExecutables _listOfExecutables;
         private InputController _inputController;
+        private Player _player;
         
         private void Start()
         {
+            _player = FindObjectOfType<Player>();
             _inputController = new InputController(FindObjectOfType<Player>());
             
             
@@ -32,7 +34,10 @@ namespace SpaceShip
             _interactiveObjects = FindObjectsOfType<InteractiveObject>();
 
             _listOfExecutables = new ListOfExecutables();
+            _listOfExecutables.AddExecutableObject(_player);
             _listOfExecutables.AddExecutableObject(_inputController);
+            
+            
         }
 
         private void Update()
