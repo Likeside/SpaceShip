@@ -16,11 +16,13 @@ namespace SpaceShip
         private ListOfExecutables _listOfExecutables;
         private InputController _inputController;
         private Player _player;
+        private ObjectPooler _objectPooler;
         
         private void Start()
         {
             _player = FindObjectOfType<Player>();
             _inputController = new InputController(FindObjectOfType<Player>());
+            _objectPooler = new ObjectPooler();
             
             
             _enemyFactory = new EnemyAsteroidsFactory(_listOfEnemyScriptableObjects);

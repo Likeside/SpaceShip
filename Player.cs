@@ -1,6 +1,5 @@
 using System;
 using Interfaces;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace SpaceShip
@@ -8,15 +7,15 @@ namespace SpaceShip
     public class Player: MonoBehaviour, IMoveable, IRotating, IExecutable, IShooting
     {
         [SerializeField] private Sprite _sprite;
+        [SerializeField] private float _moveSpeed = 5f;
         private Transform _transform;
-        private float _moveSpeed = 5f;
         private MousePositionDirection _mousePositionDirection;
         private void Start()
         {
             _transform = gameObject.transform;
             var spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = _sprite;
-            _mousePositionDirection = new MousePositionDirection();
+            _mousePositionDirection = new MousePositionDirection(); //хранит в себе камеру и вычисляет текущую позицию и направление
         }
 
         public void Move(float x, float y)
