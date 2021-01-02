@@ -14,7 +14,7 @@ namespace SpaceShip.Bullets
             _sprite = sprite;
             _damage = damage;
             _moveSpeed = moveSpeed;
-            //_direction = direction; Откуда получать? Если стрелять будут и другие корабли, помимо игрока
+            //_direction = direction; Откуда получать? Если стрелять будут и другие корабли, помимо игрока (дирекшн получаю в контроллере от игрока)
 
         }
         

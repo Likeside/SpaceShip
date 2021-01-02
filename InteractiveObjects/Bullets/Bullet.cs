@@ -33,7 +33,8 @@ namespace SpaceShip.Bullets
 
         public void Execute()
         {
-          Move(_bulletData._direction.x,_bulletData._direction.y); 
+         // Move(_bulletData._direction.x,_bulletData._direction.y); вот это надо настроить
+          Move(10, 10);
         }
 
         public int ApplyDamageOnCollision(int damage)
